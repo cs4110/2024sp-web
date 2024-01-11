@@ -4,34 +4,46 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           cache: 'yarn'
       - run: yarn
-      - name: 'Build site'
-        run: yarn build
+      - run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{github.event_name=='push' && github.ref=='refs/heads/main'}}
+    steps:
+      - name: Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: build
       - name: rsync
-        if: ${{github.event_name=='push' && github.ref=='refs/heads/main'}}
         env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
-          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_HOST: cslinux.cs.cornell.edu
+          DEPLOY_USER: als485
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
           DEPLOY_SRC: ./build/
-          DEPLOY_DEST: sync/cs4110-2024sp
-          DEPLOY_2_HOST: cslinux
-          DEPLOY_2_DEST: /courses/cs4110/2024sp
+          DEPLOY_DEST: /courses/cs4110/2024sp
         run: |
           echo "$DEPLOY_KEY" > pk
           echo "$DEPLOY_KNOWN_HOSTS" > kh
           chmod 600 pk
           rsync --compress --recursive --checksum --itemize-changes --delete \
-            -e "ssh -p \"$DEPLOY_PORT\" -i pk -o 'UserKnownHostsFile kh'" \
+            --chmod=Du=rwx,Dgo=rx,Fu=rw,Fog=r --perms \
+            -e "ssh -i pk -o 'UserKnownHostsFile kh'" \
             $DEPLOY_SRC $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DEST
-          ssh -p $DEPLOY_PORT -i pk -o 'UserKnownHostsFile kh' \
-            $DEPLOY_USER@$DEPLOY_HOST \
-            rsync --compress --recursive --checksum --itemize-changes \
-            --delete -e ssh --chmod=ugo=rwX \
-            $DEPLOY_DEST/ $DEPLOY_2_HOST:$DEPLOY_2_DEST
