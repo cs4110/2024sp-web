@@ -20,9 +20,9 @@ jobs:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
           DEPLOY_SRC: ./build/
-          DEPLOY_DEST: sync/cs4110-2021fa
+          DEPLOY_DEST: sync/cs4110-2024sp
           DEPLOY_2_HOST: cslinux
-          DEPLOY_2_DEST: /courses/cs4110/2021fa
+          DEPLOY_2_DEST: /courses/cs4110/2024sp
         run: |
           echo "$DEPLOY_KEY" > pk
           echo "$DEPLOY_KNOWN_HOSTS" > kh
