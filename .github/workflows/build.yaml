@@ -44,6 +44,5 @@ jobs:
           echo "$DEPLOY_KNOWN_HOSTS" > kh
           chmod 600 pk
           rsync --compress --recursive --checksum --itemize-changes --delete \
-            --chmod=Du=rwx,Dgo=rx,Fu=rw,Fog=r --perms \
             -e "ssh -i pk -o 'UserKnownHostsFile kh'" \
             $DEPLOY_SRC $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DEST
