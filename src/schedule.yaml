@@ -1,0 +1,127 @@
+-
+    date: August 27
+-
+    date: August 30
+    mon: true
+-
+    date: September 1
+-
+    date: September 3
+-
+    date: September 6
+    mon: true
+    canceled: true
+    event: Labor Day
+-
+    date: September 8
+-
+    date: September 10
+-
+    date: September 13
+    mon: true
+    assignments: A1 due
+-
+    date: September 15
+-
+    date: September 17
+-
+    date: September 20
+    mon: true
+    assignments: A2 due
+-
+    date: September 22
+-
+    date: September 24
+-
+    date: September 27
+    mon: true
+    assignments: A3 due
+-
+    date: September 29
+-
+    date: October 1
+-
+    date: October 4
+    mon: true
+    assignments: A4 due
+-
+    date: October 6
+-
+    date: October 8
+-
+    date: October 11
+    mon: true
+    canceled: true
+    event: Fall Break
+-
+    date: October 13
+-
+    date: October 15
+-
+    date: October 18
+    mon: true
+    event: Preliminary Exam I
+-
+    date: October 20
+-
+    date: October 22
+-
+    date: October 25
+    mon: true
+    assignments: A5 due
+-
+    date: October 27
+-
+    date: October 29
+-
+    date: November 1
+    mon: true
+    assignments: A6 due
+-
+    date: November 3
+-
+    date: November 5
+-
+    date: November 8
+    mon: true
+    assignments: A7 due
+-
+    date: November 10
+-
+    date: November 12
+-
+    date: November 15
+    mon: true
+    event: Preliminary Exam II
+-
+    date: November 17
+-
+    date: November 19
+-
+    date: November 22
+    mon: true
+    assignments: A8 due
+-
+    date: November 24
+    event: No class (Thanksgiving)
+    canceled: true
+-
+    date: November 26
+    event: No class (Thanksgiving)
+    canceled: true
+-
+    date: November 29
+    mon: true
+-
+    date: December 1
+-
+    date: December 3
+-
+    date: December 6
+    mon: true
+    assignments: A9 due
+
+-
+    date: December 13
+    mon: true
+    event: Final Exam, 9:00am, Phillips 101
