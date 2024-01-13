@@ -9,16 +9,18 @@
 - date: February 5
   mon: true
 - date: February 7
-  assignments: A1 due
 - date: February 9
+  assignments: A1 due
 - date: February 12
   mon: true
 - date: February 14
 - date: February 16
+  assignments: A2 due
 - date: February 19
   mon: true
 - date: February 21
 - date: February 23
+  assignments: A3 due
 - date: February 26
   mon: true
   canceled: true
@@ -27,21 +29,25 @@
 - date: March 1
 - date: March 4
   mon: true
-  event: Preliminary Exam I
+  assignments: A4 due
 - date: March 6
 - date: March 8
+  event: Preliminary Exam I
 - date: March 11
   mon: true
 - date: March 13
 - date: March 15
+  assignments: A5 due
 - date: March 18
   mon: true
 - date: March 20
 - date: March 22
+  assignments: A6 due
 - date: March 25
   mon: true
 - date: March 27
 - date: March 29
+  assignments: A7 due
 - date: April 1
   mon: true
   canceled: true
@@ -56,15 +62,17 @@
   mon: true
 - date: April 10
 - date: April 12
+  event: Preliminary Exam II
 - date: April 15
   mon: true
-  event: Preliminary Exam II
 - date: April 17
 - date: April 19
+  assignments: A8 due
 - date: April 22
   mon: true
 - date: April 24
 - date: April 26
+  assignments: A9 due
 - date: April 29
   mon: true
 - date: May 1
