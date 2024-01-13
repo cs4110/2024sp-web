@@ -1,7 +1,7 @@
 var Metalsmith  = require('metalsmith');
 var markdown    = require('metalsmith-markdown');
 var layouts     = require('@metalsmith/layouts');
-var sass        = require('metalsmith-dart-sass');
+var sass        = require('@metalsmith/sass');
 var metadata    = require('metalsmith-metadata');
 var collections = require('metalsmith-collections');
 var filepath    = require('metalsmith-filepath');
@@ -68,6 +68,7 @@ var site = Metalsmith(__dirname)
   }))
   .use(layouts({
     default: 'layout.hbs',
+    pattern: ['**/*.html'],
   }));
 
 if (serveMode) {
