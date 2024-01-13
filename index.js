@@ -76,6 +76,7 @@ var site = Metalsmith(__dirname)
   .use(layouts({
     default: 'layout.hbs',
     pattern: ['**/*.html'],
+    suppressNoFilesError: serveMode,
   }));
 
 if (serveMode) {
