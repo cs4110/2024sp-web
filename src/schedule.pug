@@ -16,7 +16,11 @@ table.schedule
       tr(class=day.canceled ? "canceled" : "" class=day.mon ? "mon" : "")
         td #{day.date}
         if day.event
-          td.event(colspan=2) #{day.event}
+          if day.normal
+            td #{day.event}
+            td
+          else
+            td.event(colspan=2) #{day.event}
         else
           td #{day.topic}
           td
