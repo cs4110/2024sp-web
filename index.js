@@ -1,13 +1,14 @@
 var Metalsmith  = require('metalsmith');
-var markdown    = require('metalsmith-markdown');
+var markdown    = require('@metalsmith/markdown');
 var layouts     = require('@metalsmith/layouts');
 var sass        = require('@metalsmith/sass');
-var metadata    = require('metalsmith-metadata');
-var collections = require('metalsmith-collections');
+var metadata    = require('@metalsmith/metadata');
+var collections = require('@metalsmith/collections');
 var filepath    = require('metalsmith-filepath');
-var inplace     = require('metalsmith-in-place');
+var inplace     = require('@metalsmith/in-place');
 var ignore      = require('metalsmith-ignore');
 var define      = require('metalsmith-define');
+var defaultVals = require('@metalsmith/default-values');
 
 var url = require('url');
 
@@ -16,20 +17,15 @@ var serveMode = process.argv.indexOf('--serve') != -1;
 var site = Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
-  .metadata({
+  .use(defaultVals({
+    pattern: '*',
     serve: serveMode,
-  })
-  .use(ignore(['**/.DS_Store']))
-  .use(collections({
-    pages: {
-      pattern: '*.{md,html,pug,hbs}',
-      sort: 'order',
-    }
   }))
+  .use(ignore(['**/.DS_Store']))
   .use(metadata({
-    course: 'course.yaml',
-    schedule: 'schedule.yaml',
-    content: 'content.yaml',
+    course: 'src/course.yaml',
+    schedule: 'src/schedule.yaml',
+    content: 'src/content.yaml',
   }))
   .use((files, metalsmith, done) => {
     // Merge schedule with content.
@@ -46,6 +42,12 @@ var site = Metalsmith(__dirname)
     }
     done();
   })
+  .use(collections({
+    pages: {
+      pattern: '*.{md,html,pug,hbs}',
+      sort: 'order',
+    }
+  }))
   .use(define({
     resolve: url.resolve,  // Path join helper.
     relative: function (link) {
@@ -57,6 +59,11 @@ var site = Metalsmith(__dirname)
     },
   }))
   .use(inplace({
+    transform: 'handlebars',
+    setFilename: true,
+  }))
+  .use(inplace({
+    transform: 'pug',
     setFilename: true,
   }))
   .use(markdown({
