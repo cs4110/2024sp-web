@@ -13,15 +13,15 @@
             same slides: slides02.pdf
             same notes: lecture02.pdf
 -
+    topic: Small-Step Semantics
+    links:
+            same slides: slides02.pdf
+            same notes: lecture02.pdf
+-
     topic: Properties and Inductive Proofs
     links:
             slides: slides03.pdf
             notes: lecture03.pdf
--
-    topic: Inductive Proof
-    links:
-            same slides: slides03.pdf
-            same notes: lecture03.pdf
 -
     topic: Large-Step Semantics
     links:
