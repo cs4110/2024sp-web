@@ -23,6 +23,11 @@
             slides: slides03.pdf
             notes: lecture03.pdf
 -
+    topic: Inductive Proof Practice
+    links:
+            same slides: slides03.pdf
+            same notes: lecture03.pdf
+-
     topic: Large-Step Semantics
     links:
             slides: slides04.pdf
@@ -52,11 +57,11 @@
     links:
             slides: slides09.pdf
             notes: lecture09.pdf
--
-    topic: More Axiomatic Semantics
-    links:
-            same slides: slides09.pdf
-            same notes: lecture09.pdf
+# -
+#     topic: More Axiomatic Semantics
+#     links:
+#             same slides: slides09.pdf
+#             same notes: lecture09.pdf
 -
     topic: Hoare Logic
     links:
