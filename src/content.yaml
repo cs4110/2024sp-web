@@ -48,7 +48,12 @@
             slides: slides07.pdf
             notes: lecture07.pdf
 -
-    topic: Denotational Semantics Examples
+    topic: More Denotations
+    links:
+            same slides: slides07.pdf
+            same notes: lecture07.pdf
+-
+    topic: Denotational Semantics Proofs
     links:
             slides: slides08.pdf
             notes: lecture08.pdf
