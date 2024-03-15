@@ -82,3 +82,6 @@
   assignments: A10 due 5/2
 - date: May 6
   mon: true
+- date: May 13
+  mon: true
+  event: "Final Exam, 9am"
