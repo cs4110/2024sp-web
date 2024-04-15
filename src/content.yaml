@@ -181,6 +181,12 @@
     links:
             notes: lecture30.pdf
 -
+    topic: Synthesis
+    links:
+            notes: 'https://www.cs.cornell.edu/~asampson/blog/minisynth.html'
+-
+    topic: Special Topic
+-
     topic: Higher-Kinded Types
     links:
             notes: lecture31.pdf
@@ -188,8 +194,3 @@
     topic: Dependent Types
     links:
             notes: lecture32.pdf
--
-    topic: Synthesis
-    links:
-            notes: 'https://www.cs.cornell.edu/~asampson/blog/minisynth.html'
-
