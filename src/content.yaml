@@ -181,11 +181,9 @@
     links:
             notes: lecture30.pdf
 -
-    topic: Synthesis
-    links:
-            notes: 'https://www.cs.cornell.edu/~asampson/blog/minisynth.html'
--
     topic: Special Topic
+-
+    topic: Synthesis (with guest lecturer Vivian Ding)
 -
     topic: Higher-Kinded Types
     links:
