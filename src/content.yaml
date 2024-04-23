@@ -181,9 +181,13 @@
     links:
             notes: lecture30.pdf
 -
-    topic: Special Topic
+    topic: Packet Scheduling (with guest lecturer Anshuman Mohan)
+    links:
+            speaker: https://www.cs.cornell.edu/~amohan/
 -
     topic: Synthesis (with guest lecturer Vivian Ding)
+    links:
+            speaker: https://vivianyyd.github.io
 -
     topic: Higher-Kinded Types
     links:
